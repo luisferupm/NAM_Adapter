@@ -34,15 +34,11 @@ sudo npm nam_adapter
 ### Request an On-Demand Test between endpoints
 A Call instance resource represents a measure between a host A and host B. The following parameters are needed to run Test On-Demand (OWD or BDW):
 
-    * URI: http://{hostServerNAM}:{portNAM}/monitoring/host2hosts/{serviceType}/{regionId_Source}-{hostId_Source};{regionId_Destination}-{hostId_Destination} 
-
-    * Method: GET 
-
-    * Content-Type: Application/JSON 
-
-    * Query string parameters: ?format=XML/JSON/TXT 
-
-    * Request body: none 
+* URI: http://{hostServerNAM}:{portNAM}/monitoring/host2hosts/{serviceType}/{regionId_Source}-{hostId_Source};{regionId_Destination}-{hostId_Destination} 
+* Method: GET 
+* Content-Type: Application/JSON 
+* Query string parameters: ?format=XML/JSON/TXT 
+* Request body: none 
 
 
 Example of usage: 
