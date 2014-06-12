@@ -4,6 +4,7 @@
   "description": "NAM Adapter",
   "main": "NAMadapter.js",
   "scripts": {
+    "start": "NAMadapter",
     "test": "mocha /Test/NAMadapter_test.js"
   },
   "repository": {
