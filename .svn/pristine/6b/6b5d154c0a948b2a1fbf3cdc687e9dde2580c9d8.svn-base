@@ -1,0 +1,17 @@
+var mongoose = require('mongoose'),
+    Schema   = mongoose.Schema;
+
+var testshowSchema = new Schema({
+  idTest:    { type: String },
+  region:  { type: String },
+  type:    { type: String, enum:
+	  ['Bdw', 'Owd', 'Ping']
+	        },
+  timestamp:		{ type: String },
+  hostSource:   { type: String },
+  hostDestination:  { type: String },
+  error:  { type: Boolean },
+  result:  { type: String }    
+});
+
+module.exports = mongoose.model('testshow', testshowSchema);

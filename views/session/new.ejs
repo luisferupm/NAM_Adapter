@@ -1,0 +1,44 @@
+
+
+<h1> </h1> 
+<div class="row-fluid">
+<div class="span3">
+<div class="modal-header">
+<h2 class="form-signin-heading">Sign in</h2>
+</div>       
+
+<form method='POST' action='/login' class='clearfix signin js-signin' style="border: 1px">
+
+  <input type='hidden' name='redir' value='<%= redir %>'>
+
+  <div class='control-group' style="border: 1px">
+   <label class='control-label' for="login">Login:</label> 
+    <div class='controls'>
+        <input type="text" id="login" name="login" size="30" required autofocus/>
+    </div>
+  </div>
+
+
+ <div class='control-group'>
+    <label class='control-label' for="password">Password:</label>
+    <div class='controls'>
+        <input type="password" id="password" name="password" size="30" required/>
+    </div>
+  </div>
+
+	<label class="controls">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <p>
+
+<div class='controls' style="vertical-align: middle" >
+  <button type='submit' class="btn btn-lg btn-primary btn-block" >Login</button>
+</div>
+
+</form>
+</div>
+</div>
+<br>
+</br>
+
+

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>XIMM-<%=title%></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Welcome to</h1>
+    <h1>XIMM-<%=title%> </h1>
+    <br> </br>
+    <p><%=title%> - v2.0_Auth -  is up and running in this host</p>
+  </body>
+</html>

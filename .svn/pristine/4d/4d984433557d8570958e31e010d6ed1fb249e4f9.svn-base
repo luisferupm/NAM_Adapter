@@ -1,0 +1,35 @@
+{
+  "name": "API-NAM",
+  "version": "0.0.1",
+  "private": true,
+  "name": "NAM_Adapter",
+  "main": "appNam.js",
+  "description": "NAM Adapter",
+  "keywords": ["XIFI", "Monitoring", "NAM"],
+  "author": "Fernando Garcia - Universidad Politécnica de Madrid",
+  "scripts": {
+    "start": "node appNam.js"
+  },
+  "dependencies": {
+    "express": "3.2.6",
+    "ejs": "*",
+    "js2xmlparser": "*",
+    "mongoose": "*",
+    "node-schedule": "*",
+    "superagent": "*",
+    "cron": "*",
+    "expect":"*",
+    "atob": "1.1"
+  },
+  
+  "engines": {
+    "node": ">=0.10.18"
+  },
+  
+  "repository": {
+	"type": "svn",
+	"url": "https://xifisvn.res.eng.it/wp3/software/NAM_Adapter/"  
+  },
+  
+  "readmeFilename": "README.md"
+}
