@@ -1,6 +1,6 @@
 {
   "name": "nam_adapter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "NAM Adapter",
   "main": "NAMadapter.js",
   "scripts": {
@@ -22,6 +22,7 @@
   "dependencies": {
 	    "express": "3.2.6",
 	    "express-partials":"*",
+	    "ejs":"*",
 	    "js2xmlparser": "*",
 	    "mongoose": "3.8.8",
 	    "superagent": "*",
