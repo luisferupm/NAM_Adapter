@@ -1,18 +1,57 @@
 #!/usr/bin/env node
 
-var argvs = process.argv
-console.log(argvs)
+//require('../lib/NAMadapter.js')();
+
+var help =  'usage: nam_adapter [action] [options]\n'+
+            '\n'+
+            'Monitors the script specified in the current process or as a daemon\n'+
+            '\n'+
+            'actions:\n'+
+            '  start               Start nam_adapter module\n'+
+            '  stop                Stop nam_adapter module\n'+
+            '  restart             Restart nam_adapter module\n'+
+            '  logs                Lists log files nam_adapter processes\n'+
+            '  cleanlogs           [CAREFUL] Deletes all historical nam_adapter log files\n'+
+            '\n'+
+            'options:\n'+
+            
+            '  -l  LOGFILE      Logs the nam_adapter output to LOGFILE\n'+
+            '  -d, --daemon     Start SCRIPT as a daemon\n'+
+            '  -v, --verbose    Turns on the verbose messages from nam_adapter\n'+
+            '  -s, --silent     Run the child script silencing stdout and stderr\n'+
+            ''
+          ;
 
 
-if(argvs[2] ==('stop')){
-console.log ("stop")
-	require('forever').stopAll('lib/NAMadapter.js') 
-} else {
-	if(argvs[2] == ('-d' || '--daemon')){
-	console.log ("daemon")
-		require('forever').startDaemon(process.cwd() +'/lib/NAMadapter.js', {logFile : '/var/log/nam_adapter.log' }) 
-	} else {
-		require('forever').start(process.cwd() + '/lib/NAMadapter.js', {logFile : '/var/log/nam_adapter.log' }) 
-	}
+var argvs = process.argv;
+//console.log(argvs)
+
+switch(argvs[2]){
+	case 'stop' : 
+				console.log ("stop")
+				require('forever').stopAll(process.cwd() + 'lib/NAMadapter.js')
+				break; 
+				
+    case ('-d' || '--daemon'):
+				console.log ("daemon")
+				require('forever').startDaemon(process.cwd() +'/lib/NAMadapter.js', {logFile : '/var/log/nam_adapter.log' })
+				break; 
+				
+	case ("" || 'start'):
+				if((argvs[3]=='-d') || (argvs[3]== '--daemon')){
+					require('forever').startDaemon(process.cwd() +'/lib/NAMadapter.js', {logFile : '/var/log/nam_adapter.log' })
+				}else {
+					require('forever').start(process.cwd() + '/lib/NAMadapter.js', {logFile : '/var/log/nam_adapter.log' })
+				}
+				break;
+				 
+	case ('--help' || '-h')  :
+				console.log(help)
+				break;
+	
+	default:		console.log(help)
+				break;
 }
+
+
 

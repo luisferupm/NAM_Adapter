@@ -15,11 +15,30 @@ In order to work properly, the component requires the following set of software 
 * MongoDB
 * NTP
 * Iperf
-The required software can be installed manually from the default Debian/Ubuntu repositories by using the following command:
 
+The required software can be installed manually from the default Debian/Ubuntu repositories by using the following commands:
+
+Install Node-js
 ```
+ $ sudo apt-get update
+ $ sudo apt-get install -y python-software-properties python g++ make
+ $ sudo add-apt-repository -y ppa:chris-lea/node.js
+ $ sudo apt-get update
+ $ sudo apt-get install nodejs
+```
+
+Install mongodb
+``` 
+ $ sudo apt-get install mongodb
+```
+
+Install iperf
+
+``` 
  $ sudo apt-get install iperf
 ```
+
+
 
 ###  Installation of the NAM Adapter in Debian/Ubuntu
 
