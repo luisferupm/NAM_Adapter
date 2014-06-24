@@ -42,7 +42,7 @@ Install ntp
 
 ``` 
  $ sudo apt-get install ntp
-
+```
 
 
 ###  Installation of the NAM Adapter in Debian/Ubuntu
