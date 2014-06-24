@@ -38,6 +38,11 @@ Install iperf
  $ sudo apt-get install iperf
 ```
 
+Install ntp
+
+``` 
+ $ sudo apt-get install ntp
+
 
 
 ###  Installation of the NAM Adapter in Debian/Ubuntu
@@ -45,7 +50,16 @@ Install iperf
 For install nam adapter uses the following command:
 
 ```
-sudo npm nam_adapter
+npm install nam_adapter
+```
+
+###  Run NAM Adapter 
+
+For run nam adapter uses the following commands:
+
+```
+$ cd nodes_modules/nam_adapter
+../nam_adapter/ $ ./NAMadapter start
 ```
 
 ## Usage
