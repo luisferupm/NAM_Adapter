@@ -1,7 +1,7 @@
 
 {
   "name": "nam_adapter",
-  "version": "1.0.17.unsecure",
+  "version": "1.0.18.unsecure",
   "description": "NAM Adapter",
   "main": "NAMadapter.js",
   "scripts": {
