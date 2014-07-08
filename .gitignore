@@ -2,4 +2,4 @@
 .env
 .*
 .gitignore
-.svn
+.svn/
