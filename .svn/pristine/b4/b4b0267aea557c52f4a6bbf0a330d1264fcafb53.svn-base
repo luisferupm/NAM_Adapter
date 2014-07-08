@@ -1,0 +1,52 @@
+
+{
+  "name": "nam_adapter",
+  "version": "1.0.17.unsecure",
+  "description": "NAM Adapter",
+  "main": "NAMadapter.js",
+  "scripts": {
+    "start": "NAMadapter.js",
+    "test": "mocha /Test/NAMadapter_test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luisferupm/NAM_Adapter"
+  },
+  "keywords": [
+    "nam",
+    "monitoring",
+    "bandwidth",
+    "latency",
+    "owd",
+    "XIFI"
+  ],
+  "dependencies": {
+	    "express": "3.2.6",
+	    "express-partials":"*",
+	    "ejs":"*",
+	    "js2xmlparser": "*",
+	    "mongoose": "3.8.8",
+	    "superagent": "*",
+	    "cron": "*",
+	    "forever": "*",
+	    "pkginfo": "0.3.0",
+	    "dateformat": "*",
+	    "winston": "~0.7.2",
+	    "nconf":"*"
+  },
+  "bin": {
+	    "nam_adapter": "./bin/nam_adapter"  
+  },
+  
+  "engines": {
+	    "node": ">=0.10.18"
+
+  },
+		  
+  "author": "Luis Fernando Garcia",
+  "license": "BSD-2",
+  "bugs": {
+    "url": "https://github.com/luisferupm/NAM_Adapter/issues"
+  },
+  "homepage": "https://github.com/luisferupm/NAM_Adapter"
+}

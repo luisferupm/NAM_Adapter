@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+
+<body style="">
+      <div class="navbar">
+    	<div class="navbar-inner">
+    		<a class="brand" href="#">NAM</a>
+    			<ul class="nav">
+    				<li><a href="/">Home</a></li>
+    				<li class="active"><a href="/Config">Config</a></li>
+					<li class="divider"></li>
+					<li class=""><a href="#">....</a></li>
+					
+					<li class="pull-right"><a href="#"><%=session.user.login%></a></li>
+                     
+			        <% if (session.user) { %>
+                		<li class="pull-right"><a href="/logout">Logout</a></li>
+         			<% } else { %>
+              	  
+                		<li class="pull-right"><a href="/login?redir=/">Login</a></li>
+                  
+         			<% } %>        
+         			    				
+    			</ul>
+    	</div>
+    </div>
+    
+<div class="wrapper container-fluid">
+
+
+  	<div id="flash">
+	</div>
+
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+    	<ul class="tabbable nav nav-list">
+    	<li class="nav-header">Config</li>
+    	<li class="active"><a href="/config">NAM Server</a></li>
+    	<li><a href="/config/bdw">BDW</a></li>
+    	<li><a href="/config/owd">OWD</a></li>
+    	<li><a href="/config/packetsloss">PacketsLoss</a></li>
+    	...
+    	</ul>
+  	</div>
+  	<div class="tabbable span10">
+  	
+  	
+  	    <form class="form-horizontal" method='POST' action='/config'>
+    <fieldset>
+    <legend>NAM Server Parameters</legend>
+    <br>
+    
+    <label><strong>NAM port</strong></label> 
+    <input type="text" name="port_NAM_Adapter" value= <%=host.port_NAM%>>
+    <span class="help-block"><small>Port to use by server NAM.</small></span>
+    
+    <p>
+    
+    <label><strong>Iperf port</strong></label>
+    <input type="text" name="port_iperf_server" value= <%=host.port_iperf%> >
+    <span class="help-block"><small>Port to use by TCP conections of iperf.</small></span>
+    
+    <p>
+    
+    <label><strong>BataBase URL</strong></label>
+    <input type="text" name="ls_global" value= <%=host.ls_global%>>
+    <span class="help-block"><small>Specifying a database URL.</small></span>
+    
+    <p>
+    
+    <label><strong>NGSI adapter url</strong></label>
+    <input type="text" id="inputNGSI" name="NGSIAdapter_url" value= <%=host.NGSIAdapter_url%>>
+    <span class="help-block"><small>Specifying a NGSI Adapter URL.</small></span>
+    
+    </br>
+    
+
+    <legend>Host Parameters</legend>
+    <br>
+    
+    <div class="control-group">
+		<label class="control-label" for="inputRegion">regionId</label>
+		<div class="controls">
+			<input type="text" id="inputRegion" name="regionId" value= <%=host.regionId%>>
+		</div>
+		
+	</div>
+	
+	<div class="control-group">
+		<label class="control-label" for="inputHostId">hostId</label>
+		<div class="controls">
+			<input type="text" id="inputHostId" name="hostId" value= <%=host.hostId%>>
+		</div>
+	</div>
+	
+	<div class="control-group">
+		<label class="control-label" for="inputHostId">Type</label>
+		<div class="controls">
+			<input type="text" id="inputtype" name="type" value= <%=host.type%>>
+		</div>
+	</div>
+	
+		<div class="control-group">
+		<label class="control-label" for="inputPublicIp">Public Ip</label>
+		<div class="controls">
+			<input type="text" id="inputPublicIp" name="public_ip" value= <%=host.ip_address.public_ip%>>
+		</div>
+	</div>
+	
+	<div class="control-group">
+		<label class="control-label" for="inputPrivateIp">Private Federation Ip</label>
+		<div class="controls">
+			<input type="text" id="inputPrivateIp" name="private_federation_ip" value= <%=host.ip_address.private_federation_ip%>>
+		</div>
+	</div>
+	
+	<div class="control-group">
+		<label class="control-label" for="inputLocalIp">Local Ip</label>
+		<div class="controls">
+			<input type="text" id="inputLocalIp" name="local_ip" value= <%=host.ip_address.local_ip%>>
+		</div>
+	</div>
+
+    
+ 	<div class="control-group">
+		<div class="controls">
+			<label class="checkbox">
+				<input name="bdw_status" value= <%=host.bdw_status%> type="checkbox" checked> BDW
+			</label>
+			<label class="checkbox">
+				<input name="owd_status" value= <%=host.owd_status%> type="checkbox" checked> OWD
+			</label>
+			<label class="checkbox">
+				<input type="checkbox" name="packetLoss_status" value= <%=host.packetLoss_status%> checked> PacketsLoss
+			</label>
+			
+		</div>
+	</div>    
+    
+    <br>
+    <label class="checkbox">
+    <input type="checkbox" name="restart"> NAM restart after saving changes
+    </label>
+    </br>    
+    
+    <div class="form-actions">
+    	<button type="submit" class="btn btn-primary">Save changes</button>
+    	<button type="button" class="btn">Cancel</button>
+    </div>
+    
+    </fieldset>
+    </form>
+
+    
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	</div>
+  </div>
+ </div>
+
+</body>
