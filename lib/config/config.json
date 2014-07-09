@@ -37,7 +37,7 @@
   "password": "pepProxy",
   "userIDM": "NAMadapter",
   "passIDM": "namadapter",
-  "pid": 3637,
+  "pid": 4276,
   "undefined_endpoint_default": {
     "regionId": "Madrid",
     "hostId": "192.168.1.134",
