@@ -1,12 +1,12 @@
 {
   "federation": "XIFI",
   "regionId": "Madrid",
-  "hostId": "192.168.1.36",
+  "hostId": "localhost",
   "type": "vm",
   "ip_address": {
-    "local_ip": "192.168.1.36",
-    "public_ip": "192.168.1.36",
-    "private_federation_ip": "192.168.1.36",
+    "local_ip": "localhost",
+    "public_ip": "localhost",
+    "private_federation_ip": "localhost",
     "default": "private"
   },
   "bdw_status": "true",
@@ -37,7 +37,7 @@
   "password": "pepProxy",
   "userIDM": "NAMadapter",
   "passIDM": "namadapter",
-  "pid": 4276,
+  "pid": 6687,
   "undefined_endpoint_default": {
     "regionId": "Madrid",
     "hostId": "192.168.1.134",
