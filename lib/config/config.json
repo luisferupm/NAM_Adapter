@@ -36,5 +36,6 @@
   "username": "pepProxy",
   "password": "pepProxy",
   "userIDM": "NAMadapter",
-  "passIDM": "namadapter"
+  "passIDM": "namadapter",
+  "pid": 8460
 }
