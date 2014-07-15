@@ -29,7 +29,7 @@
     "frequency": "480",
     "type": "bdw"
   },
-  "ls_global": "http://138.4.47.33:3000/monitoring",
+  "ls_global": "http://localhost:3000/monitoring",
   "account_host": "https://account.lab.fi-ware.org",
   "keystone_host": "cloud.lab.fi-ware.org",
   "keystone_port": 4731,
@@ -37,5 +37,5 @@
   "password": "pepProxy",
   "userIDM": "NAMadapter",
   "passIDM": "namadapter",
-  "pid": 8460
+  "pid": 6444
 }

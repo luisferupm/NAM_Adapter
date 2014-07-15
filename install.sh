@@ -11,3 +11,5 @@ sudo apt-get install mongodb
 sudo apt-get install iperf
 
 sudo apt-get install ntp
+
+sudo npm install
