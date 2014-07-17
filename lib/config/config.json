@@ -1,6 +1,6 @@
 {
   "federation": "XIFI",
-  "regionId": "Madrid",
+  "regionId": "regionID",
   "hostId": "localhost",
   "type": "vm",
   "ip_address": {
@@ -37,5 +37,5 @@
   "password": "pepProxy",
   "userIDM": "NAMadapter",
   "passIDM": "namadapter",
-  "pid": 6444
+  "pid": 9809
 }
