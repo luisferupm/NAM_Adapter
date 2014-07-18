@@ -15,7 +15,7 @@
   "port_NAM_Adapter": "3000",
   "port_iperf_server": "5001",
   "ntp_server": "hora.rediris.es",
-  "NGSIAdapter_url": "http://localhost:5005/",
+  "NGSIAdapter_url": "http://localhost:1027/",
   "limit_scheduledTest": "6",
   "owd_endpoint_default": {
     "regionId": "Trento",
@@ -37,5 +37,5 @@
   "password": "pepProxy",
   "userIDM": "NAMadapter",
   "passIDM": "namadapter",
-  "pid": 13029
+  "pid": 13807
 }
