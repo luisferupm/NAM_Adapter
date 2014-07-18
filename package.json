@@ -1,6 +1,6 @@
 {
   "name": "nam_adapter",
-  "version": "1.0.19.2",
+  "version": "1.0.19.3",
   "description": "NAM Adapter",
   "main": "NAMadapter.js",
   "scripts": {
