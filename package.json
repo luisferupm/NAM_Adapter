@@ -23,6 +23,7 @@
     "express": "3.2.6",
     "express-partials": "*",
     "ejs": "*",
+    "connect-flash": "*",
     "js2xmlparser": "*",
     "mongoose": "3.8.8",
     "superagent": "*",
