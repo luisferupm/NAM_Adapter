@@ -1,7 +1,7 @@
 {
   "federation": "XIFI",
   "regionId": "regionID",
-  "hostId": "localhost",
+  "hostId": "node03",
   "type": "vm",
   "ip_address": {
     "local_ip": "localhost",
@@ -18,7 +18,7 @@
   "NGSIAdapter_url": "http://localhost:1027/",
   "limit_scheduledTest": "6",
   "owd_endpoint_default": {
-    "regionId": "Trento",
+    "regionId": "Trentino",
     "hostId": "193.205.211.69",
     "frequency": "480",
     "type": "owd"
@@ -26,7 +26,7 @@
   "bdw_endpoint_default": {
     "regionId": "Trento",
     "hostId": "193.205.211.69",
-    "frequency": "480",
+    "frequency": "48",
     "type": "bdw"
   },
   "ls_global": "http://localhost:3000/monitoring",
@@ -37,5 +37,5 @@
   "password": "pepProxy",
   "userIDM": "NAMadapter",
   "passIDM": "namadapter",
-  "pid": 4724
+  "pid": 7195
 }
