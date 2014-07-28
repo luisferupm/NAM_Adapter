@@ -1,7 +1,7 @@
 {
   "federation": "XIFI",
   "regionId": "regionID",
-  "hostId": "node03",
+  "hostId": "hostID",
   "type": "vm",
   "ip_address": {
     "local_ip": "localhost",
@@ -18,18 +18,18 @@
   "NGSIAdapter_url": "http://localhost:1027/",
   "limit_scheduledTest": "6",
   "owd_endpoint_default": {
-    "regionId": "Trentino",
-    "hostId": "193.205.211.69",
+    "regionId": "Trento",
+    "hostId": "monitoring",
     "frequency": "480",
     "type": "owd"
   },
   "bdw_endpoint_default": {
     "regionId": "Trento",
-    "hostId": "193.205.211.69",
-    "frequency": "48",
+    "hostId": "monitoring",
+    "frequency": "480",
     "type": "bdw"
   },
-  "ls_global": "http://localhost:3000/monitoring",
+  "NAMFederationDatabase": "http://138.4.47.33:3000/monitoring",
   "account_host": "https://account.lab.fi-ware.org",
   "keystone_host": "cloud.lab.fi-ware.org",
   "keystone_port": 4731,
@@ -37,5 +37,5 @@
   "password": "pepProxy",
   "userIDM": "NAMadapter",
   "passIDM": "namadapter",
-  "pid": 7195
+  "pid": 3350
 }
