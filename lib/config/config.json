@@ -17,19 +17,23 @@
   "ntp_server": "hora.rediris.es",
   "NGSIAdapter_url": "http://localhost:1027/",
   "limit_scheduledTest": "6",
-  "owd_endpoint_default": {
-    "regionId": "Trento",
-    "hostId": "monitoring",
-    "frequency": "480",
-    "type": "owd"
-  },
-  "bdw_endpoint_default": {
-    "regionId": "Trento",
-    "hostId": "monitoring",
-    "frequency": "480",
-    "type": "bdw"
-  },
-  "NAMFederationDatabase": "http://138.4.47.33:3000/monitoring",
+  "owd_endpoint_default": [
+    {
+      "regionId": "Trento",
+      "hostId": "monitoring",
+      "frequency": "480",
+      "type": "owd"
+    }
+  ],
+  "bdw_endpoint_default": [
+    {
+      "regionId": "Trento",
+      "hostId": "monitoring",
+      "frequency": "480",
+      "type": "bdw"
+    }
+  ],
+  "NAMFederationDatabase": "http://localhost:3000/monitoring",
   "account_host": "https://account.lab.fi-ware.org",
   "keystone_host": "cloud.lab.fi-ware.org",
   "keystone_port": 4731,
@@ -37,5 +41,15 @@
   "password": "pepProxy",
   "userIDM": "NAMadapter",
   "passIDM": "namadapter",
-  "pid": 3497
+  "pid": 6087,
+  "bdw_endpoint_default[0]": {
+    "regionId": "Trento",
+    "hostId": "monitoring",
+    "frequency": "480"
+  },
+  "owd_endpoint_default[0]": {
+    "regionId": "Trento",
+    "hostId": "monitoring",
+    "frequency": "480"
+  }
 }
