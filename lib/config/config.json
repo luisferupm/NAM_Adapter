@@ -41,7 +41,7 @@
   "password": "pepProxy",
   "userIDM": "NAMadapter",
   "passIDM": "namadapter",
-  "pid": 6087,
+  "pid": 7492,
   "bdw_endpoint_default[0]": {
     "regionId": "Trento",
     "hostId": "monitoring",
