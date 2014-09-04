@@ -1,5 +1,5 @@
 //
-// Copyright 2013 Universidad Politécnica de Madrid
+// Copyright 2013 Universidad Politecnica de Madrid
 // All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License"); you may
@@ -21,9 +21,7 @@
 
 // nam base parser object (to be extended by probe-specific parsers)
 var baseParser = require('./common/base').parser;
-
 var parser = Object.create(baseParser);
-
 
 //var baseParser = require('./base').parser;
 
@@ -61,47 +59,33 @@ var parser = Object.create(baseParser);
 //
 
      
-parser.parseRequest = function() {
-    var entityData = {};
-
-            entityData.data = this.request.body;
-            entityData.perfData += this.request.body;
-
-    return entityData;
+parser.parseRequest = function(request) {
+   var entityData = {};
+   entityData.data = request.body;
+   return entityData;
 };
 
+parser.getContextAttrs = function(probeEntityData) {
+   var data  = JSON.parse(probeEntityData.data);   
+   var attrs = { timeIntervals: NaN, bandwidth: NaN, bandwidth_avg: NaN };
+   var interval = "10;2";
+   var bandwidth = data.result.match(/([0-9.]+)( Mbits)/gm)
 
-
-
-parser.getContextAttrs = function(multilineData, multilinePerfData) {
-    var data  = JSON.parse(multilineData);   
-
-    var attrs = { timeIntervals: NaN, bandwidth: NaN, bandwidth_avg: NaN };
-	
-
-    var interval = "10;2";
-    var bandwidth = data.result.match(/([0-9.]+)( Mbits)/gm)
-
-    
-    var i = 0;
-
-    for (i in bandwidth){
-        bandwidth[i]=parseFloat(bandwidth[i].match(/[0-9.]+/)); 
-
-    }
+   var i = 0;
+   for (i in bandwidth){
+     bandwidth[i]=parseFloat(bandwidth[i].match(/[0-9.]+/));
+   }
 
    // attrs.timestamp = data.timestamp; 
-    attrs.timeIntervals = interval;
-    attrs.bandwidth = bandwidth;
-    attrs.bandwidth_avg = bandwidth[bandwidth.length-1];
+   attrs.timeIntervals = interval;
+   attrs.bandwidth = bandwidth;
+   attrs.bandwidth_avg = bandwidth[bandwidth.length-1];
 
+   if (attrs.bandwith==NaN) {
+     throw new Error('No valid bandwith data found');
+   }
 
-    if (attrs.bandwith==NaN) {
-        throw new Error('No valid bandwith data found');
-    }
-
-    return attrs;
+   return attrs;
 };
-
 
 exports.parser = parser;
