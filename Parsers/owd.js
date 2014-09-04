@@ -1,5 +1,18 @@
 //
-//  License.
+// Copyright 2013 Universidad Politécnica de Madrid
+// All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License"); you may
+// not use this file except in compliance with the License. You may obtain
+// a copy of the License at
+//
+//       http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+// WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+// License for the specific language governing permissions and limitations
+// under the License.
 //
 
 
@@ -8,7 +21,6 @@
 
 // nam base parser object (to be extended by probe-specific parsers)
 var baseParser = require('./common/base').parser;
-
 var parser = Object.create(baseParser);
 
 // NAM adapter "OWD" probe-specific parser
@@ -49,39 +61,29 @@ var parser = Object.create(baseParser);
 //     
 
 
-parser.parseRequest = function() {
-        var entityData = {};
-
-	entityData.data = this.request.body;
-	entityData.perfData += this.request.body;
-
-        return entityData;
-    };
+parser.parseRequest = function(request) {
+   var entityData = {};
+   entityData.data = request.body;
+   return entityData;
+};
 
 
-parser.getContextAttrs = function(multilineData, multilinePerfData) {
-        
-	var data  = JSON.parse(multilineData);   
-	var attrs = { OWD_min: NaN, OWD_max: NaN, jitter: NaN };
-	var items = data.result.match(/([-0-9.]+)/gm);
+parser.getContextAttrs = function(probeEntityData) {
+   var data  = JSON.parse(probeEntityData.data);   
+   var attrs = { OWD_min: NaN, OWD_max: NaN, jitter: NaN };
+   var items = data.result.match(/([-0-9.]+)/gm);
     			    			        
-	var i = 0;
+   var i = 0;	    			        
+   for (i in items){    			    			            
+     items[i]=parseFloat(items[i].match(/[0-9.]+/)); 		    			        
+   }
     			    			        
-	for (i in items){    			    			            
-		items[i]=parseFloat(items[i].match(/[0-9.]+/)); 		    			        
-	}
-	    			    			        
-	//attrs.timestamp = data.timestamp;
-	attrs.OWD_min = items[0];
-	attrs.OWD_max = items[1];
-	attrs.jitter = items[4];
+   //attrs.timestamp = data.timestamp;
+   attrs.OWD_min = items[0];
+   attrs.OWD_max = items[1];
+   attrs.jitter = items[4];
 
-	    			    			   
-	    			    			        
-	console.info(attrs)
-       
-        return attrs;
-    };   
-
+   return attrs;
+};   
 
 exports.parser = parser;
